@@ -44,7 +44,7 @@ implementation 'com.test.library:mlog:latest.release'
 ```groovy
 apply from: 'maven.gradle' //脚本复制到工程目录下
 //or
-apply from: 'https://gitlab.yc345.tv/lipeng/mavenpublish/-/raw/main/gradle/maven.gradle'  //依赖远程脚本
+apply from: 'https://raw.githubusercontent.com/chjif/GradleConfig/main/gradle/maven.gradle'  //依赖远程脚本
 ```
 
 2. 上传
@@ -60,7 +60,7 @@ apply from: 'https://gitlab.yc345.tv/lipeng/mavenpublish/-/raw/main/gradle/maven
 ```groovy
 apply from: 'maven_publish.gradle' //脚本复制到工程目录下
 //or
-apply from: 'https://gitlab.yc345.tv/lipeng/mavenpublish/-/raw/main/gradle/maven_publish.gradle'  //依赖远程脚本
+apply from: 'https://raw.githubusercontent.com/chjif/GradleConfig/main/gradle/maven_publish.gradle'  //依赖远程脚本
 ```
 
 2. 上传
