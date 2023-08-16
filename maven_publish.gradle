@@ -1,0 +1,50 @@
+apply plugin: 'maven-publish'
+
+//生成文档注释
+task androidJavadocs(type: Javadoc) {
+    failOnError = false
+    source = android.sourceSets.main.java.srcDirs
+    ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+    classpath += files(ext.androidJar)
+}
+//将文档打包成jar
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    archiveClassifier.set("javadoc")
+    from androidJavadocs.destinationDir
+}
+//将源码打包，这一点对kotlin来说很重要，否则业务侧无法看到源码
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from android.sourceSets.main.java.srcDirs
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = GROUP_ID
+                artifactId = ARTIFACT_ID
+                version = VERSION
+                artifact(androidSourcesJar)//将源码打包进aar，如果不需要可以去掉
+                artifact(androidJavadocsJar)//将注释打包进aar，如果不需要可以去掉
+            }
+        }
+
+        repositories {
+            maven {
+                name = 'local'
+                url = "$rootDir/localMavenRepository"
+            }
+
+            maven {
+                name = 'nexus'
+                url = VERSION.endsWith('SNAPSHOT') ? SNAPSHOT_URL : RELEASE_URL
+                credentials {
+                    username PULISH_NAME
+                    password PULISH_PASSWORD
+                }
+            }
+        }
+    }
+}
