@@ -1,0 +1,33 @@
+apply plugin: 'maven-publish'
+
+publishing {
+
+    repositories {
+        maven {
+            credentials {
+                username PULISH_NAME
+                password PULISH_PASSWORD
+            }
+            url RELEASE_URL
+        }
+    }
+
+
+    publications {
+
+        //eg
+        bos(MavenPublication) {
+            groupId GROUP_ID
+            artifactId 'bos-android-sdk'
+            version '1.0.14'
+            artifact '../aars/bos-android-sdk-1.0.14.jar'
+        }
+
+        name(MavenPublication) {
+            groupId GROUP_ID
+            artifactId 'artifactId'
+            version 'version'
+            artifact 'aar、jar relative path'
+        }
+    }
+}
