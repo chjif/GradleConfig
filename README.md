@@ -177,6 +177,3 @@ buildscript {
     }
 }
 ```
-
-
-![img](img/mavendepen.png)
