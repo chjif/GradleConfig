@@ -1,0 +1,100 @@
+ext {
+    //android app 相关配置
+    android = [
+            compileSdk: 31,
+            minSdk    : 23,
+            targetSdk : 31
+    ]
+
+    versions = [
+            lifecycle_version : '2.2.0',
+            constraint_version: '2.1.0',
+    ]
+
+    root = [
+            core_ktx                      : 'androidx.core:core-ktx:1.7.0',
+            appcompat_v7                  : 'androidx.appcompat:appcompat:1.3.0',
+            view_model_lifecycle          : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions["lifecycle_version"]}",
+            view_model_state              : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions["lifecycle_version"]}",
+            view_model_live_data          : "androidx.lifecycle:lifecycle-livedata-ktx:${versions["lifecycle_version"]}",
+            view_model_runtime            : "androidx.lifecycle:lifecycle-runtime-ktx:${versions["lifecycle_version"]}",
+            view_model_common             : "androidx.lifecycle:lifecycle-common-java8:${versions["lifecycle_version"]}",
+            constraint_layout             : "androidx.constraintlayout:constraintlayout:${versions["constraint_version"]}",
+            room_runtime                  : "androidx.room:room-runtime:2.4.3",
+            room_compiler                 : "androidx.room:room-compiler:2.4.3",
+            recyclerView                  : "androidx.recyclerview:recyclerview:1.1.0",
+            view_pager2                   : "androidx.viewpager2:viewpager2:1.0.0",
+
+            flexbox                       : 'com.google.android:flexbox:1.0.0',
+            gson                          : 'com.google.code.gson:gson:2.10.1',
+
+            okhttp                        : 'com.squareup.okhttp3:okhttp:4.10.0',
+            retrofit2                     : "com.squareup.retrofit2:retrofit:2.9.0",
+            retrofit2_gson                : "com.squareup.retrofit2:converter-gson:2.9.0",
+            retrofit2_rxjava              : "com.squareup.retrofit2:adapter-rxjava2:2.9.0",
+
+            rxlifecycle_android           : 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',
+            rxlifecycle                   : 'com.trello.rxlifecycle2:rxlifecycle:2.2.2',
+
+            kotlin_stdlib_jdk7            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.30",
+            kotlinx_coroutines_core       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2",
+            kotlinx_coroutines_android    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2",
+
+            context_provider              : "com.yangcong345.platform:context_provider:1.0.0",
+            platform_net                  : "com.yangcong345.platform:net:3.1.0",
+            platform_utils                : "com.yangcong345.platform:utils:2.5.2",
+            platform_system_utils         : "com.yangcong345.platform:system-utils:1.0.0",
+            platform_point                : 'com.yangcong345.platform:points:2.3.7',
+            om_imageloader                : 'com.yangcong345.foundation:om-imageloader:1.2.2',
+            om_view                       : "com.yangcong345.foundation:om-view:1.2.3",
+            platform_log                  : "com.yangcong345.platform:log:2.1.30",
+            pad_support                   : isDebugPadSupport.toBoolean() ? project(':pad-support') : "com.yangcong345.padmodule:pad-support:1.17.2.2",
+            launcher_support              : isDebugLauncherSupport.toBoolean() ? project(':launcher-support') : "com.yangcong345.launcher:support:1.0.4",
+            ui_pad                        : isDebugUIPad.toBoolean() ? project(':ui-pad') : 'com.yangcong345.padmodule:ui-pad:1.19.0.9',
+            platform_preferences          : "com.yangcong345.platform:preferences:3.0.0",
+            baidu_push                    : "com.yangcong345.platform:baidu_push:3.5.9.1.2",
+            om_toast                      : "com.yangcong345.foundation:om-toast:1.3.0",
+            apk_direct_update             : "com.yangcong345.padmodule:appupdate:1.0.6",
+            sls_log                       : 'com.yangcong345.library:sls:0.0.3',
+            ipc                           : "com.yangcong345.padmodule:ipc:1.0.4",
+            ycCrash                       : "com.yangcong345.library:YcCrash:1.0.5",
+
+            arouter_api                   : 'com.alibaba:arouter-api:1.5.2',
+            arouter_compiler              : 'com.alibaba:arouter-compiler:1.5.2',
+            mmkv                          : "com.tencent:mmkv:1.2.13",
+            baidu_location                : 'com.amap.api:location:6.1.0',
+            eventbus                      : 'org.greenrobot:eventbus:3.3.1',
+            lottie                        : 'com.airbnb.android:lottie:6.0.0',
+            zoom_layout                   : 'com.otaliastudios:zoomlayout:1.9.0',
+            bannerviewpager               : 'com.github.zhpanvip:bannerviewpager:3.5.2',
+            recycler_adapter_helper       : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
+            DslTablayout                  : 'com.github.angcyo.DslTablayout:TabLayout:3.2.5',
+            DslTablayoutViewPager1Delegate: 'com.github.angcyo.DslTablayout:ViewPager1Delegate:3.2.5',
+            bugly                         : 'com.tencent.bugly:crashreport:4.1.9.2',
+            custom_dns                    : "com.yangcong345.platform:custom-dns:1.2.2",
+            androidBitmapMonitor          : 'io.github.shixinzhang:android-bitmap-monitor:1.1.0',
+            androidBitmapMonitorNoOp      : 'io.github.shixinzhang:android-bitmap-monitor-no-op:1.1.0',
+
+            lib_log                       : project('lib-log'),
+            lib_base                      : project('lib-base'),
+            lib_push                      : project('lib-push'),
+            srv_location                  : project('srv-location'),
+            lib_romapi                    : project('lib-romapi'),
+            srv_strategy                  : project('srv-strategy'),
+            srv_white_list                : project('srv-whitelist'),
+            srv_app_manager               : project('srv-app-manager'),
+            srv_device_manager            : project('srv-device-manager'),
+            lib_osupload                  : project(':lib-osupload'),
+            lib_koom                      : project(':lib-koom'),
+            ui_policy                     : project(':ui-policy'),
+            control_config                : project(':control-config'),
+            lib_control                   : project(':lib-control'),
+            lib_trace                     : project(':lib-trace'),
+            lib_debugtool                 : project(':lib-debugtool'),
+            lib_matrix                    : project(':lib-matrix'),
+            lib_application_lifecycle     : project(':lib-application-lifecycle'),
+            switch_controller             : 'com.yangcong345.platform:switch_controller:1.3.0',
+            yc_point_plus                 : 'com.yangcong345.platform:points-plus:1.1.2'
+
+    ]
+}
