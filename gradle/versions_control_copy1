@@ -1,0 +1,357 @@
+ext {
+    //android app 相关配置
+    android = [
+            compileSdk: 33,
+            minSdk    : 23,
+            targetSdk : 33
+    ]
+
+    versions = [
+            lifecycle_version  : '2.5.1',
+            room_version       : '2.5.0',
+            glide_version      : '4.14.2',
+            retrofit_version   : '2.9.0',
+            soloader_version   : '0.10.4',
+            flutter_version    : '1.0.86',
+            databinding_version: '7.2.2',
+            kotlinx_version    : '1.6.4',
+            kotlin_version     : '1.7.21',
+    ]
+
+    root = [
+            //lifecycle
+            lifecycle_viewmodel_savedstate   : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions["lifecycle_version"]}",
+            lifecycle_common                 : "androidx.lifecycle:lifecycle-common:${versions["lifecycle_version"]}",
+            lifecycle_common_java8           : "androidx.lifecycle:lifecycle-common-java8:${versions["lifecycle_version"]}",
+            lifecycle_process                : "androidx.lifecycle:lifecycle-process:${versions["lifecycle_version"]}",
+            lifecycle_service                : "androidx.lifecycle:lifecycle-service:${versions["lifecycle_version"]}",
+            lifecycle_runtime                : "androidx.lifecycle:lifecycle-runtime:${versions["lifecycle_version"]}",
+            lifecycle_viewmodel              : "androidx.lifecycle:lifecycle-viewmodel:${versions["lifecycle_version"]}",
+            lifecycle_livedata               : "androidx.lifecycle:lifecycle-livedata:${versions["lifecycle_version"]}",
+            lifecycle_livedata_core          : "androidx.lifecycle:lifecycle-livedata-core:${versions["lifecycle_version"]}",
+            lifecycle_runtime_ktx            : "androidx.lifecycle:lifecycle-runtime-ktx:${versions["lifecycle_version"]}",
+            lifecycle_viewmodel_ktx          : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions["lifecycle_version"]}",
+            lifecycle_livedata_ktx           : "androidx.lifecycle:lifecycle-livedata-ktx:${versions["lifecycle_version"]}",
+            lifecycle_livedata_core_ktx      : "androidx.lifecycle:lifecycle-livedata-core-ktx:${versions["lifecycle_version"]}",
+            //是否能删掉
+            rxlifecycle_android              : "com.trello.rxlifecycle2:rxlifecycle-android:2.2.2",
+            rxlifecycle                      : "com.trello.rxlifecycle2:rxlifecycle:2.2.2",
+
+            //RxJava
+            rxandroid                        : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            rxjava                           : "io.reactivex.rxjava2:rxjava:2.2.19",
+
+            //androidx
+            constraintlayout                 : "androidx.constraintlayout:constraintlayout:2.1.4",
+            constraintlayout_core            : "androidx.constraintlayout:constraintlayout-core:1.0.4",
+            core_ktx                         : "androidx.core:core-ktx:1.8.0",
+            core                             : "androidx.core:core:1.8.0",
+            appcompat                        : "androidx.appcompat:appcompat:1.6.0",
+            appcompat_resources              : "androidx.appcompat:appcompat-resources:1.6.0",
+            legacy_support_v4                : "androidx.legacy:legacy-support-v4:1.0.0",
+            viewpager2                       : "androidx.viewpager2:viewpager2:1.0.0",
+            fragment                         : "androidx.fragment:fragment:1.5.4",
+            fragment_ktx                     : "androidx.fragment:fragment-ktx:1.5.4",
+            recyclerview                     : "androidx.recyclerview:recyclerview:1.2.1",
+            multidex                         : "androidx.multidex:multidex:2.0.0",
+            activity                         : "androidx.activity:activity:1.2.4",
+
+
+
+            //kotlinx
+            kotlinx_coroutines_core          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions["kotlinx_version"]}",
+            kotlinx_coroutines_core_jvm      : "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:${versions["kotlinx_version"]}",
+            kotlinx_coroutines_android       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions["kotlinx_version"]}",
+            //kotlin
+            kotlin_android_extensions_runtime: "org.jetbrains.kotlin:kotlin-android-extensions-runtime:${versions["kotlin_version"]}",
+            kotlin_stdlib_jdk8               : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions["kotlin_version"]}",
+            kotlin_stdlib_jdk7               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions["kotlin_version"]}",
+            kotlin_reflect                   : "org.jetbrains.kotlin:kotlin-reflect:${versions["kotlin_version"]}",
+            kotlin_stdlib                    : "org.jetbrains.kotlin:kotlin-stdlib:${versions["kotlin_version"]}",
+            kotlin_stdlib_common             : "org.jetbrains.kotlin:kotlin-stdlib-common:${versions["kotlin_version"]}",
+
+            //room数据库
+            room_ktx                         : "androidx.room:room-ktx:${versions["room_version"]}",
+            room_rxjava2                     : "androidx.room:room-rxjava2:${versions["room_version"]}",
+            room_runtime                     : "androidx.room:room-runtime:${versions["room_version"]}",
+            room_common                      : "androidx.room:room-common:${versions["room_version"]}",
+            room_compiler                    : "androidx.room:room-compiler:${versions["room_version"]}",
+            greendao                         : "org.greenrobot:greendao:3.3.0",
+            greendao_api                     : "org.greenrobot:greendao-api:3.3.0",
+
+            //bugly
+            crashreport                      : "com.tencent.bugly:crashreport:4.1.9.2",
+            nativecrashreport                : "com.tencent.bugly:nativecrashreport:3.9.2",
+            //QQ
+            qqopensdk                        : "com.tencent.tauth:qqopensdk:3.53.0",
+
+            //图片&lottie
+            lottie                           : "com.airbnb.android:lottie:6.0.0",
+            glide                            : "com.github.bumptech.glide:glide:${versions["glide_vesion"]}",
+            gifdecoder                       : "com.github.bumptech.glide:gifdecoder:${versions["glide_vesion"]}",
+            disklrucache                     : "com.github.bumptech.glide:disklrucache:${versions["glide_vesion"]}",
+            annotations                      : "com.github.bumptech.glide:annotations:${versions["glide_vesion"]}",
+            sharp_library                    : "com.pixplicity.sharp:library:1.1.0",
+            ucrop                            : "com.github.yalantis:ucrop:2.2.4@aar",//图片裁剪
+            circleimageview                  : "de.hdodenhof:circleimageview:3.1.0@aar",//圆形图片
+
+            //Toast
+            smart_toast                      : "io.github.vincent-series:smart-toast:4.0.4",
+            common                           : "io.github.vincent-series:common:1.0.6",
+            annotations                      : "io.github.vincent-series:annotations:1.0.2",
+            smart_show_support_toast         : "com.github.the-pig-of-jungle.smart-show-support:toast:3.0.2",
+            smart_show_support_core          : "com.github.the-pig-of-jungle.smart-show-support:core:3.0.2",
+            toolkit_support                  : "com.github.the-pig-of-jungle:toolkit-support:1.0.5",
+
+            //X5内核
+            tbssdk                           : "com.tencent.tbs:tbssdk:44286",
+
+            //阿里
+            alicloud_android_ut              : "com.aliyun.ams:alicloud-android-ut:5.4.3",
+            alicloud_android_utils           : "com.aliyun.ams:alicloud-android-utils:1.1.6.4",
+            alicloud_android_beacon          : "com.aliyun.ams:alicloud-android-beacon:1.0.8",
+            oss_android_sdk                  : "com.aliyun.dpa:oss-android-sdk:2.9.5",
+            alicloud_android_httpdns         : "com.aliyun.ams:alicloud-android-httpdns:2.3.0",
+            aliyun_log_android_sdk           : "com.aliyun.openservices:aliyun-log-android-sdk:2.6.4",
+            fastjson                         : "com.alibaba:fastjson:1.2.48",
+            alpha                            : "com.alibaba.android:alpha:1.0.0.1",
+            arouter_api                      : "com.alibaba:arouter-api:1.5.2",
+            alicloud_android_tool            : "com.aliyun.ams:alicloud-android-tool:1.0.1",
+            alicloud_android_sender          : "com.aliyun.ams:alicloud-android-sender:1.1.5",
+            alicloud_android_rest            : "com.aliyun.ams:alicloud-android-rest:1.7.3-open",
+            alicloud_android_logger          : "com.aliyun.ams:alicloud-android-logger:1.2.0",
+            alicloud_android_crashdefend     : "com.aliyun.ams:alicloud-android-crashdefend:0.0.6",
+            alicloud_android_ipdetector      : "com.aliyun.ams:alicloud-android-ipdetector:1.0.0",
+            arouter_annotation               : "com.alibaba:arouter-annotation:1.0.6",
+            ddsharesdk                       : "com.alibaba.android:ddsharesdk:1.2.0",
+
+            //友盟
+            share_sina                       : "com.umeng.umsdk:share-sina:7.3.0",
+            share_qq                         : "com.umeng.umsdk:share-qq:7.3.0",
+            share_core                       : "com.umeng.umsdk:share-core:7.3.0",
+            umsdk_common                     : "com.umeng.umsdk:common:9.5.6",
+            asms                             : "com.umeng.umsdk:asms:1.6.3",
+            share_dingding                   : "com.umeng.umsdk:share-dingding:7.1.9",
+
+            //支付 & ping++
+            pingpp_android_upacp             : "com.pingxx:pingpp-android-upacp:3.4.9",
+            pingpp_qpay                      : "com.pingxx:pingpp-qpay:2.1.19",
+            alipaysdk_android                : "com.alipay.sdk:alipaysdk-android:15.8.11",
+            wechat_sdk_android_without_mta   : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0",
+            pingpp_android_alipay            : "com.pingxx:pingpp-android-alipay:15.6.5",
+
+            //七牛
+            happy_dns                        : "com.qiniu:happy-dns:2.0.1",
+            //新浪
+            sina_core                        : "io.github.sinaweibosdk:core:12.5.0",
+
+            //MMKV
+            mmkv                             : "com.tencent:mmkv:1.2.16",
+            mmkv_static                      : "com.tencent:mmkv-static:1.2.16",
+
+            //弹幕
+            danmakuFlameMaster               : "com.github.ctiao:DanmakuFlameMaster:0.9.25",
+            ndkbitmap_armv7a                 : "com.github.ctiao:ndkbitmap-armv7a:0.9.21",
+
+            //网络库
+            okhttp                           : "com.squareup.okhttp3:okhttp:4.11.0",
+            converter_gson                   : "com.squareup.retrofit2:converter-gson:${versions["retrofit_version"]}",
+            adapter_rxjava2                  : "com.squareup.retrofit2:adapter-rxjava2:${versions["retrofit_version"]}",
+            ndkbitmap_armv7a                 : "com.squareup.retrofit2:retrofit:${versions["retrofit_version"]}",
+            converter_scalars                : "com.squareup.retrofit2:converter-scalars:${versions["retrofit_version"]}",
+
+            //SoLoader
+            annotation                       : "com.facebook.soloader:annotation:${versions["soloader_version"]}",
+            nativeloader                     : "com.facebook.soloader:nativeloader:${versions["soloader_version"]}",
+            soloader                         : "com.facebook.soloader:soloader:${versions["soloader_version"]}",
+
+            //databinding
+            databinding_runtime              : "androidx.databinding:databinding-runtime:${versions["databinding_version"]}",
+            databinding_adapters             : "androidx.databinding:databinding-adapters:${versions["databinding_version"]}",
+            databinding_common               : "androidx.databinding:databinding-common:${versions["databinding_version"]}",
+            databinding_ktx                  : "androidx.databinding:databinding-ktx:${versions["databinding_version"]}",
+
+
+            //华为
+            game                             : "com.huawei.hms:game:5.0.4.303",
+            apptouch                         : "com.huawei.hms:apptouch:5.0.2.300",
+            hwid                             : "com.huawei.hms:hwid:6.4.0.301",
+
+            //eventbus
+            eventbus                         : "org.greenrobot:eventbus:3.3.1",
+
+            //uber
+            rib_uava                         : "com.uber.rib:rib-uava:0.9.2",
+            rib_base                         : "com.uber.rib:rib-base:0.9.2",
+            autodispose_lifecycle            : "com.uber.autodispose:autodispose-lifecycle:1.3.0",
+            autodispose                      : "com.uber.autodispose:autodispose:1.4.0",
+
+            //PhotoView
+            photoView                        : "com.github.chrisbanes:PhotoView:2.3.0",
+
+            //RecyclerView封装
+            baseRecyclerViewAdapterHelper    : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.8",
+
+            //美团多渠道
+            walle_library                    : "com.meituan.android.walle:library:1.1.7",
+
+            //滚轮
+            wheelview                        : "com.contrarywind:wheelview:4.0.9",
+            //滚动选择器
+            android_pickerView               : " com.contrarywind:Android-PickerView:4.1.6",
+
+            //磁盘缓存
+            disklrucache                     : "com.jakewharton:disklrucache:2.0.2",
+
+            //动态链接库
+            relinker                         : "com.getkeepsafe.relinker:relinker:1.4.1",
+
+            //新手引导
+            newbieGuide                      : "com.github.huburt-Hu:NewbieGuide:v2.4.0",
+
+            //日志
+            xlog                             : "com.elvishew:xlog:1.10.1",
+            mars_xlog                        : "com.tencent.mars:mars-xlog:1.2.5",
+
+            //压缩
+            zip4j                            : "net.lingala.zip4j:zip4j:2.6.4",
+            luban                            : "top.zibin:Luban:1.1.8",
+
+            //下载
+            android_http_download_manager    : "com.coolerfall:android-http-download-manager:1.6.3",
+
+            //智齿客服
+            sobotsdk_x                       : "com.sobot.chat:sobotsdk_x:2.8.3",
+            sobotsdk_imageloader             : "com.sobot.chat:sobotsdk-imageloader:2.0",
+            sobotsupport_glidev4             : "com.sobot.chat:sobotsupport-glidev4:1.0.10",
+
+            //PDF
+            pdfview                          : "com.yangcong345.platform:pdfview:1.0.3",
+
+            //工具类
+            androids                         : "com.github.1993hzw:Androids:1.3",
+
+            //Indicator指示器
+            magicIndicator                   : "com.github.hackware1993:MagicIndicator:1.7.0",
+
+            //弹性动画
+            overscroll_decor_android         : "me.everything:overscroll-decor-android:1.0.4",
+
+            //日期扩展（为了兼容低版本api）
+            threetenabp                      : "com.jakewharton.threetenabp:threetenabp:1.4.6",
+
+            gson                             : "com.google.code.gson:gson:2.10.1",
+            material                         : "com.google.android.material:material:1.8.0",
+
+
+            //洋葱研发
+            //支付
+            ui_pay                           : "com.yangcong345.platform:ui-pay:2.18.2",
+            //播放器
+            player                           : "com.yangcong345.platform:player:4.7.5",
+            videocache                       : "com.yangcong345.platform:videocache:1.4.8",
+            //下载
+            download                         : "com.yangcong345.platform:download:2.7.0",
+            okdownload                       : "com.yangcong345.platform:okdownload:1.0.7",
+            okdownload_sqlite                : "com.yangcong345.platform:okdownload-sqlite:1.0.7",
+            //MSA证书
+            identifier                       : "com.yangcong345.platform:identifier:1.0.3",
+            oaid_sdk                         : "com.yangcong345.platform:oaid_sdk:2.2.0",
+            //日志
+            log                              : "com.yangcong345.platform:log:2.1.40",
+            //push
+            push                             : "com.yangcong345.platform:push:3.1.0",
+            baidu_push                       : "com.yangcong345.platform:baidu_push:3.5.9.6",
+            //埋点
+            points                           : "com.yangcong345.platform:points:2.3.27",
+            //存储
+            preferences                      : "com.yangcong345.platform:preferences:3.1.0",
+            //DNS
+            custom_dns                       : "com.yangcong345.platform:custom-dns:1.2.3",
+            //工具
+            utils                            : "com.yangcong345.platform:utils:2.5.5",
+            view_utils                       : "com.yangcong345.platform:view-utils:1.0.2",
+            system_utils                     : "com.yangcong345.platform:system-utils:1.1.1",
+            context_provider                 : "com.yangcong345.platform:context_provider:1.0.0",
+            //分享
+            socialize_wechat                 : "com.yangcong345.platform:socialize-wechat:2.3.15",
+            socialize_qq                     : "com.yangcong345.platform:socialize-qq:2.3.7",
+            socialize_sina                   : "com.yangcong345.platform:socialize-sina:2.3.6",
+            socialize                        : "com.yangcong345.platform:socialize:2.3.9",
+            socialize_dingtalk               : "com.yangcong345.platform:socialize-dingtalk:2.3.5",
+            //智齿客服
+            customer_service                 : "com.yangcong345.platform:customer-service:4.0.0",
+            sobot_x                          : "com.yangcong345.platform:sobot-x:3.2.0.2",
+            //诊断
+            diagnosis                        : "com.yangcong345.platform:diagnosis:1.7.7",
+            diagnosis_annotaions             : "com.yangcong345.platform:diagnosis_annotaions:1.0.1",
+            om_statistic                     : "com.yangcong345.foundation:om-statistic:1.2.5",//页面统计
+            //网络
+            om_netstate                      : "com.yangcong345.foundation:om-netstate:1.1.1",
+            net                              : "com.yangcong345.platform:net:3.0.3",
+            //图片
+            om_imageloader                   : "com.yangcong345.foundation:om-imageloader:1.2.2",
+            //字体
+            default_text                     : "com.yangcong345.platform:default-text:1.0.1",
+            //圆角点击色
+            shape_view                       : "com.yangcong345.platform:shape-view:1.1.2",
+            //WebView & RIKI
+            riki_core                        : "com.yangcong345.android:riki-core:0.0.61",
+            katexwebview                     : "com.yangcong345.platform:katexwebview:2.1.0",
+            riki_annotation                  : "com.yangcong345.android:riki-annotation:0.0.1-SNAPSHOT",
+            //动态化
+            kitty                            : "com.yangcong345.platform:kitty:0.0.11",
+            //web链接配置
+            weburlconfig                     : "com.yangcong345.platform:weburlconfig:0.0.1",
+            //权限
+            om_permission                    : "com.yangcong345.foundation:om-permission:1.0.0",
+            //权限检查
+            privacy_monitor                  : "com.yangcong345.platform:privacy_monitor:1.0.9",//测试环境
+            privacymonitor_no_op             : "com.yangcong345.platform:privacymonitor-no-op:1.0.0",//线上环境
+            //Toast
+            om_toast                         : "com.yangcong345.foundation:om-toast:1.3.1",
+            //更新 &停服
+            update_manager                   : "com.yangcong345.platform:update-manager:2.3.0",
+            important_notice                 : "com.yangcong345.platform:important-notice:1.1.3",
+            //扫码
+            zxing                            : "com.yangcong345.platform:zxing:3.0.0",
+            //闹钟 & EventDTO
+            core_function                    : "com.yangcong345.foundation:core-function:1.0.0",
+            //一键登录
+            shanyan                          : "com.yangcong345.platform:shanyan:2.3.5.3",
+            //作业模块
+            ui_homework                      : "com.yangcong345.onionteacher:ui-homework:2.1.5.2-SNAPSHOT",
+            //app业务组件
+            base                             : "com.yangcong345.platform:base:1.1.1",
+            om_view                          : "com.yangcong345.foundation:om-view:1.2.3",
+            login                            : "com.yangcong345.platform:login:2.5.2",
+            switch_controller                : "com.yangcong345.platform:switch_controller:1.1.0",
+            mathcer                          : "com.yangcong345.platform:mathcer:1.0.0",
+            om_assetui                       : "com.yangcong345.foundation:om-assetui:1.1.3",
+            om_webview                       : "com.yangcong345.foundation:om-webview:1.14.0",
+            //合作校业务组件
+            clovsoftextlib                   : "com.yangcong345.clovsoft:clovsoftextlib:1.3.0",//众人通（教师控制学生平板显示）
+            clovsoftmedia                    : "com.yangcong345.clovsoft:clovsoftmedia:1.3.6",
+            clovsoftnet                      : "com.yangcong345.clovsoft:clovsoftnet:1.3.6",
+            clovsoftcommon                   : "com.yangcong345.clovsoft:clovsoftcommon:1.3.6",
+            clovsoftcore                     : "com.yangcong345.clovsoft:clovsoftcore:1.3.8",
+            drawingview                      : "com.yangcong345.clovsoft:drawingview:1.3.8",
+            student                          : "com.yangcong345.clovsoft:student:1.3.8",
+            //教师版业务组件
+            flutter                          : "com.yangcong345.flutter:flutter:${versions["flutter_version"]}",
+            catcher                          : "com.yangcong345.flutter.thirdparty:catcher:${versions["flutter_version"]}",
+            fluttertoast                     : "com.yangcong345.flutter.thirdparty:fluttertoast:${versions["flutter_version"]}",
+            shared_preferences               : "com.yangcong345.flutter.thirdparty:shared_preferences:${versions["flutter_version"]}",
+            shared_preferences_web           : "com.yangcong345.flutter.thirdparty:shared_preferences_web:${versions["flutter_version"]}",
+            shared_preferences_macos         : "com.yangcong345.flutter.thirdparty:shared_preferences_macos:${versions["flutter_version"]}",
+            flutter_mailer                   : "com.yangcong345.flutter.thirdparty:flutter_mailer:${versions["flutter_version"]}",
+            package_info                     : "com.yangcong345.flutter.thirdparty:package_info:${versions["flutter_version"]}",
+            device_info                      : "com.yangcong345.flutter.thirdparty:device_info:${versions["flutter_version"]}",
+            flutter_embedding_release        : "io.flutter:flutter_embedding_release:1.0.0-540786dd51f112885a89792d678296b95e6622e5",
+
+            //管控跨进程sdk
+            launcher_support                 : "com.yangcong345.launcher:support:1.0.8",
+
+
+    ]
+}
